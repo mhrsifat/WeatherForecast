@@ -1,0 +1,235 @@
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.navbar.dark-mode {
+  background-color: #1f1f1f;
+}
+
+/* Sections Spacing */
+#bdDivisions, #bdDistricts {
+  margin-bottom: 20px;
+}
+
+/* Current Weather Card (Full Width, 30vh Height, Row Layout) */
+#currentWeather .card {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Weather Icon (Left-Aligned) */
+#currentWeather .weather-icon {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+#currentWeather .weather-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  #threeHoursForecast .card {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #threeHoursForecast .card p {
+    margin-bottom: 8px;
+  }
+}
+
+/* Weather Details (Displayed in a Row) */
+#currentWeather .weather-details {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.weather-details p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Forecast Cards Styling */
+#threeHoursForecast .card {
+  margin-bottom: 15px;
+}
+
+#threeHoursForecast .card img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Scrollable Row for Forecast */
+.scrollable-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-bottom: 10px;
+}
+
+.scrollable-row > .col-6,
+.scrollable-row > [class*="col-"] {
+  flex-shrink: 0;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Dark Mode Card Adjustments */
+body.dark-mode .card {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+/* Ensure division/district buttons wrap text if needed */
+.btn-block {
+  white-space: normal;
+}
+
+/* Remove existing forecast icon filters */
+body:not(.dark-mode) #threeHoursForecast .card img,
+body.dark-mode #threeHoursForecast .card img {
+  filter: none !important;
+}
+
+/* Base icon colors for light mode */
+.weather-fa-icon {
+  transition: color 0.3s ease;
+}
+
+.fa-sun { color: #FFD700; } /* Yellow */
+.fa-cloud-showers-heavy { color: #2196F3; } /* Blue */
+.fa-cloud { color: #607D8B; } /* Gray */
+.fa-cloud-rain { color: #2196F3; } /* Blue */
+.fa-bolt { color: #FFC107; } /* Amber */
+.fa-snowflake { color: #B3E5FC; } /* Light Blue */
+.fa-smog { color: #9E9E9E; } /* Gray */
+
+/* Dark mode overrides */
+body.dark-mode .fa-sun { color: #FFEB3B; }
+body.dark-mode .fa-cloud-showers-heavy { color: #42A5F5; }
+body.dark-mode .fa-cloud { color: #BDBDBD; }
+body.dark-mode .fa-cloud-rain { color: #64B5F6; }
+body.dark-mode .fa-bolt { color: #FFD54F; }
+body.dark-mode .fa-snowflake { color: #E1F5FE; }
+body.dark-mode .fa-smog { color: #E0E0E0; }
+
+/* Ensure text colors adapt to mode */
+body.dark-mode .weather-details p {
+  color: #e0e0e0;
+}
+@media (max-width: 768px) {
+  #currentWeather .card {
+    height: auto;
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #currentWeather .weather-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  #currentWeather .weather-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .weather-details p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+        align-items: flex-start!important;
+    }
+  .ml-auto {
+        margin-left: 0!important;
+    }
+  .ml-2 {
+        margin-left: 0!important;
+        margin-top: 10px;
+    }
+    /* Single row for icons on small devices */
+    .navbar-nav.align-items-lg-end {
+        flex-direction: row; /* Arrange items in a row */
+        align-items: center!important; /* Vertically align items in the center */
+    }
+
+    .navbar-nav.align-items-lg-end .nav-item {
+        margin-left: 5px; /* Add some spacing between the items */
+    }
+    /* Full width search bar on small devices */
+    .navbar-collapse {
+        padding: 10px; /* Add padding inside the navbar collapse for better spacing */
+    }
+
+    .navbar-nav.ml-auto {
+        width: 100%; /* Make the search form take full width */
+        margin-bottom: 10px !important; /* Add some space below the search form */
+    }
+
+    #searchForm {
+        width: 100%; /* Make the form full width */
+    }
+
+    .input-group {
+        width: 100%; /* Make the input group full width */
+    }
+}
+
+
+/* Medium devices (tablets, 768px to 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar-nav.ml-auto,
+    .navbar-nav.align-items-lg-end {
+        width: auto; /* Reset width to auto */
+        margin-left: auto !important; /* Ensure it aligns to the right */
+        margin-bottom: 0 !important; /* Reset bottom margin */
+        flex-direction: row; /* Arrange in a row */
+        align-items: center !important; /* Vertically center items */
+    }
+
+    .navbar-nav.ml-auto .nav-item,
+    .navbar-nav.align-items-lg-end .nav-item {
+        margin-left: 5px; /* Spacing between items */
+    }
+    /* Ensure search, location, dark mode, language are in single row */
+    .navbar-collapse {
+        display: flex;
+        flex-direction: row; /* Arrange items in a row */
+        justify-content: space-between; /* Space out search and icons */
+        align-items: center; /* Vertically align items */
+        transition: height 0.5s ease, opacity 0.5s ease;
+    }
+
+    .navbar-nav.ml-auto {
+        margin-left: 0 !important; /* Reset left margin for ml-auto */
+        margin-right: 10px; /* Add some right margin to search form */
+    }
+
+
+    #searchForm {
+        width: auto; /* Let search form adjust width */
+    }
+
+    .input-group {
+        width: auto; /* Let input group adjust width */
+    }
+}

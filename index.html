@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Forecast</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" id="navbarBrand" href="#">Weather Forecast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <!-- Search Bar -->
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0" id="searchForm">
+            <div class="input-group">
+              <input class="form-control" type="search" placeholder="Search location" id="searchInput">
+              <div class="input-group-append">
+                <button class="btn btn-outline-light" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-lg-end">
+        <!-- Location Button -->
+        <li class="nav-item">
+          <button class="btn btn-outline-light ml-2" id="locationButton" type="button">
+            <i class="fas fa-map-marker-alt"></i>
+          </button>
+        </li>
+        <!-- Language Toggle -->
+        <li class="nav-item">
+          <button class="btn btn-outline-light ml-2" id="languageToggle">English</button>
+        </li>
+        <!-- Dark Mode Toggle -->
+        <li class="nav-item">
+          <button class="btn btn-outline-light ml-2" id="modeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <!-- Bangladesh Divisions Section -->
+    <section id="bdDivisions">
+      <h2 id="divisionTitle">Select a Division (BD)</h2>
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Dhaka" data-en="Dhaka" data-bn="ঢাকা">Dhaka</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Chattogram" data-en="Chattogram" data-bn="চট্টগ্রাম">Chattogram</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Khulna" data-en="Khulna" data-bn="খুলনা">Khulna</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Rajshahi" data-en="Rajshahi" data-bn="রাজশাহী">Rajshahi</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Sylhet" data-en="Sylhet" data-bn="সিলেট">Sylhet</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Barisal" data-en="Barisal" data-bn="বরিশাল">Barisal</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Rangpur" data-en="Rangpur" data-bn="রংপুর">Rangpur</button>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <button class="btn btn-primary btn-block division-btn" data-city="Mymensingh" data-en="Mymensingh" data-bn="ময়মনসিংহ">Mymensingh</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bangladesh Districts Section -->
+    <section id="bdDistricts" class="d-none">
+      <h2 id="districtTitle">Select a District</h2>
+      <div class="row" id="districtButtons">
+        <!-- District buttons will be generated dynamically -->
+      </div>
+    </section>
+
+    <!-- Weather Display Section -->
+    <section id="weatherDisplay" class="d-none">
+      <h2 id="currentWeatherHeading">Current Weather</h2>
+      <div id="currentWeather"></div>
+      <h2 id="forecastHeading">3 Hours Forecast</h2>
+      <div id="threeHoursForecast" class="mb-3"></div>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
