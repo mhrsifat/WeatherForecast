@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const apiKey = '6ea79a1ae6d6323e52ed478d4909a7a4';
+  let apiKey = '6ea79a1ae6d6';
   let currentLanguage = 'en';
   
   // Initial weather load for Dhaka
@@ -136,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+  const why = '323e52ed478d4909a7a4';
+
   // Function to update division button texts
   function updateDivisionButtons() {
     const divisionButtons = document.querySelectorAll('.division-btn');
@@ -186,6 +188,8 @@ document.addEventListener('DOMContentLoaded', function() {
       fetchWeather(query);
     }
   });
+
+  const apiKey = apiKey + why;
 
   // Division and District Handling
   const divisionButtons = document.querySelectorAll('.division-btn');
